@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:privatedu/core/app_export.dart';
+import 'package:privatedu/module/login/view/login_view.dart';
 import 'package:privatedu/widgets/app_bar/appbar_subtitle_three.dart';
 import 'package:privatedu/widgets/app_bar/appbar_title_image.dart';
 import 'package:privatedu/widgets/app_bar/custom_app_bar.dart';
@@ -93,7 +94,10 @@ class AccountAndSettingPage extends StatelessWidget {
                   padding: EdgeInsets.all(12.h),
                   decoration: IconButtonStyleHelper.fillGray,
                   onTap: () {
-                    onTapBtnFiRrSignOut(context);
+                    Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginView()),
+                    );
                   },
                   child:
                       CustomImageView(imagePath: ImageConstant.imgFiRrSignOut)))
@@ -115,7 +119,7 @@ class AccountAndSettingPage extends StatelessWidget {
               height: 40.adaptSize,
               width: 40.adaptSize,
               padding: EdgeInsets.all(10.h),
-              decoration: IconButtonStyleHelper.fillCyan,
+              decoration: IconButtonStyleHelper.lightblue,
               child:
                   CustomImageView(imagePath: ImageConstant.imgFiRrShieldCheck)),
           Padding(

@@ -46,6 +46,7 @@ class MessageOneTabContainerPageState extends State<MessageOneTabContainerPage>
                 ),
                 child: CustomSearchView(
                   controller: searchController,
+                  autofocus:false,
                   hintText: "Search by name, number...",
                   hintStyle: CustomTextStyles.bodyMediumBluegray200,
                 ),

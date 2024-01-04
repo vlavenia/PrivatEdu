@@ -167,7 +167,7 @@ class ImageConstant {
   static String imgSquareRootOfXMathFormula =
       '$imagePath/img_square_root_of_x_math_formula.svg';
 
-  static String imgEllipsisV2 = '$imagePath/img_ellipsis_v_2.svg';
+  static String imgEllipsisV2 = 'assets/icon/iconelipsis.png';
 
   static String imgVectorPrimarycontainer =
       '$imagePath/img_vector_primarycontainer.svg';

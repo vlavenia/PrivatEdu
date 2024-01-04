@@ -48,6 +48,7 @@ class MyBookingsOneTabContainerPageState
                 ),
                 child: CustomSearchView(
                   controller: searchController,
+                  autofocus:false,
                   hintText: "Search Course, Mentor, etc",
                   contentPadding: EdgeInsets.symmetric(vertical: 15.v),
                 ),

@@ -97,9 +97,10 @@ class SubjectsItemWidget extends StatelessWidget {
                 height: 68.adaptSize,
                 width: 68.adaptSize,
                 padding: EdgeInsets.all(15.h),
-                decoration: IconButtonStyleHelper.fillPink,
+                decoration: IconButtonStyleHelper.lightgreen,
                 child: CustomImageView(
-                  imagePath: ImageConstant.imgSearch,
+                  imagePath: 'assets/icon/education/sma.png',
+                   
                 ),
               ),
               SizedBox(height: 13.v),

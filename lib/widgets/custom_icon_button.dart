@@ -131,6 +131,11 @@ extension IconButtonStyleHelper on CustomIconButton {
         color: appTheme.backgroundblue,
         borderRadius: BorderRadius.circular(20.h),
       );
+      //lightgreen
+      static BoxDecoration get lightgreen => BoxDecoration(
+        color: appTheme.backgroundgreen,
+        borderRadius: BorderRadius.circular(20.h),
+      );
   static BoxDecoration get outlineWhiteA => BoxDecoration(
         color: appTheme.indigo400,
         borderRadius: BorderRadius.circular(16.h),

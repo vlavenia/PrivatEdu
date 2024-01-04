@@ -1,7 +1,7 @@
 import 'package:privatedu/presentation/homepage_two_screen/homepage_two_screen.dart';
 
 import '../homepage_one_page/widgets/subjects_item_widget.dart';
-import '../homepage_one_page/widgets/userprofile_item_widget.dart';
+import 'widgets/userprofile_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:privatedu/core/app_export.dart';
 import 'package:privatedu/widgets/app_bar/appbar_subtitle_five.dart';
@@ -25,7 +25,7 @@ class HomepageOnePage extends StatelessWidget {
             body: SizedBox(
                 width: SizeUtils.width,
                 child: SingleChildScrollView(
-                    padding: EdgeInsets.only(top: 3.v),
+                    padding: EdgeInsets.only(top: 19.v),
                     child: Padding(
                         padding: EdgeInsets.only(left: 18.h),
                         child: Column(children: [
@@ -33,6 +33,7 @@ class HomepageOnePage extends StatelessWidget {
                               padding: EdgeInsets.only(right: 9.h),
                               child: CustomSearchView(
                                   controller: searchController,
+                                  autofocus:false,
                                   hintText: "Search Course, Mentor, etc")),
                           SizedBox(height: 16.v),
                           _buildEducation(context),
@@ -49,7 +50,7 @@ class HomepageOnePage extends StatelessWidget {
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         title: Padding(
-            padding: EdgeInsets.only(left: 23.h),
+            padding: EdgeInsets.only(left: 23.h,top: 15),
             child: Column(children: [
               AppbarTitle(
                   text: "Hi, Jenny Wilson",
@@ -58,9 +59,9 @@ class HomepageOnePage extends StatelessWidget {
               AppbarSubtitleFive(text: "Here is your Course today ")
             ])),
         actions: [
-          AppbarTrailingImage(
+          AppbarTrailingImage(//imgVector
               imagePath: ImageConstant.imgVector,
-              margin: EdgeInsets.fromLTRB(40.h, 2.v, 40.h, 28.v))
+              margin: EdgeInsets.fromLTRB(50.h, 2.v, 40.h, 0.v))
         ]);
   }
 
@@ -142,6 +143,32 @@ class HomepageOnePage extends StatelessWidget {
 
   /// Section Widget
   Widget _buildUserProfile(BuildContext context) {
+    
+          List images = [
+                      {
+                        'image': 'assets/onboarding/onboarding1.png',
+                        'title': 'Matematika',
+                        'background':
+                            appTheme.deepOrange400,
+                            'icon': 
+                              'assets/images/img_square_root_of_x_math_formula.svg'
+                      },
+                      {
+                        'image': 'assets/onboarding/onboarding3.png',
+                        'title': 'Geografi',
+                        'background':
+                            appTheme.blue,
+                        'icon':  'assets/images/img_earth_1.svg'
+                      },
+                      {
+                        'image': 'assets/onboarding/onboarding2.png',
+                        'title': 'Fisika',
+                        'background':
+                            appTheme.yellow,
+                            'icon':  'assets/images/img_square_root_of_x_math_formula.svg'
+                      },
+                    ];
+
     return SizedBox(
         height: 119.v,
         child: ListView.separated(
@@ -149,10 +176,11 @@ class HomepageOnePage extends StatelessWidget {
             separatorBuilder: (context, index) {
               return SizedBox(width: 16.h);
             },
-            itemCount: 2,
-            itemBuilder: (context, index) {
-              return UserprofileItemWidget();
+            itemCount: images.length,
+            itemBuilder: (BuildContext context, int index) {
+              return UserprofileItemWidget(images[index]['title'], images[index]['background'], images[index]['icon']);
             }));
+            // images.map((imageUrl) {
   }
 
   /// Section Widget
@@ -165,7 +193,7 @@ class HomepageOnePage extends StatelessWidget {
           Container(
               margin: EdgeInsets.only(right: 13.h),
               decoration: AppDecoration.fillTeal
-                  .copyWith(borderRadius: BorderRadiusStyle.roundedBorder32),
+                  .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,43 +201,57 @@ class HomepageOnePage extends StatelessWidget {
                   children: [
                     Padding(
                         padding: EdgeInsets.only(left: 20.h, top: 21.v),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Biology",
-                                  style: CustomTextStyles.titleMediumWhiteA700),
-                              SizedBox(height: 3.v),
-                              Text("Chapter 3: Animal Kingdom",
-                                  style: CustomTextStyles.labelLargeWhiteA700),
-                              SizedBox(height: 10.v),
-                              Padding(
-                                  padding: EdgeInsets.only(left: 26.h),
-                                  child: Text("Room 2-168",
-                                      style: CustomTextStyles
-                                          .bodySmallWhiteA700_1)),
-                              CustomImageView(
-                                  imagePath: ImageConstant.imgLocationPoint2,
-                                  height: 5.v,
-                                  width: 16.h,
-                                  radius: BorderRadius.circular(2.h))
-                            ])),
-                    Container(
-                        height: 73.v,
-                        width: 103.h,
-                        margin: EdgeInsets.only(left: 30.h, bottom: 14.v),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 16.h, vertical: 21.v),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadiusStyle.roundedBorder32,
-                            image: DecorationImage(
-                                image: AssetImage(ImageConstant.imgGroup29),
-                                fit: BoxFit.cover)),
-                        child: CustomImageView(
-                            imagePath: ImageConstant.imgEllipsisV2,
-                            height: 24.adaptSize,
-                            width: 24.adaptSize,
-                            radius: BorderRadius.circular(12.h),
-                            alignment: Alignment.topRight))
+                        
+                        child: Container(
+                          width: 328,
+                          child: Column(
+                            
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Biology",
+                                        style: CustomTextStyles.titleMediumWhiteA700),
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 17),
+                                      child: CustomImageView(
+                                                                      imagePath:
+                                      'assets/icon/iconelipsis.png',
+                                                                      height: 24.adaptSize,
+                                                                      width: 24.adaptSize,
+                                                                      color: Colors.white
+                                                                    ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(height: 3.v),
+                                Text("Chapter 3: Animal Kingdom",
+                                    style: CustomTextStyles.labelLargeWhiteA700),
+                                SizedBox(height: 10.v),   
+                                  Row(
+                                    children: [
+                                      CustomImageView(
+                                    imagePath: 'assets/images/img_location_point_2.svg',
+                                    color: Colors.white70,
+                                    radius: BorderRadius.circular(2.h)),
+                                    const SizedBox(
+                                  width: 8.0,
+                                    ),
+                                      Text("Room 2-168",
+                                            style: CustomTextStyles
+                                                .bodySmallWhiteA700_1),
+                                    ],
+                                  ),
+                                CustomImageView(
+                                    imagePath: ImageConstant.imgLocationPoint2,
+                                    height: 5.v,
+                                    width: 16.h,
+                                    radius: BorderRadius.circular(2.h))
+                              ]),
+                        )),
+                   
                   ]))
         ]));
   }

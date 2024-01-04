@@ -45,7 +45,7 @@ export 'package:privatedu/presentation/homepage_bottomsheet/homepage_bottomsheet
 export 'package:privatedu/presentation/homepage_one_container_screen/homepage_one_container_screen.dart';
 export 'package:privatedu/presentation/homepage_one_page/homepage_one_page.dart';
 export 'package:privatedu/presentation/homepage_one_page/widgets/subjects_item_widget.dart';
-export 'package:privatedu/presentation/homepage_one_page/widgets/userprofile_item_widget.dart';
+export 'package:privatedu/presentation/homepage_one_page/widgets/userprofile_item_widget_old.dart';
 export 'package:privatedu/presentation/homepage_three_screen/homepage_three_screen.dart';
 export 'package:privatedu/presentation/homepage_two_screen/homepage_two_screen.dart';
 export 'package:privatedu/presentation/homepage_two_screen/widgets/subjects1_item_widget.dart';
