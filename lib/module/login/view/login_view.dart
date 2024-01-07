@@ -68,7 +68,8 @@ class LoginView extends StatefulWidget {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomepageOneContainerScreen()),
+                                  builder: (context) =>
+                                      HomepageOneContainerScreen()),
                             );
                           },
                           child: const Padding(
@@ -97,7 +98,7 @@ class LoginView extends StatefulWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterView()),
+                              builder: (context) => SignUp1Screen()),
                         );
                       },
                       child: const Text("Sign Up"))

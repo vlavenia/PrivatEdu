@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:privatedu/core/app_export.dart';
+import 'package:privatedu/presentation/course_calendar_model_bottomsheet/course_calendar_model_bottomsheet.dart';
 import 'package:privatedu/presentation/my_bookings_one_page/my_bookings_one_page.dart';
 import 'package:privatedu/presentation/my_bookings_two_page/my_bookings_two_page.dart';
 import 'package:privatedu/widgets/app_bar/appbar_subtitle.dart';
@@ -48,7 +49,7 @@ class MyBookingsOneTabContainerPageState
                 ),
                 child: CustomSearchView(
                   controller: searchController,
-                  autofocus:false,
+                  autofocus: false,
                   hintText: "Search Course, Mentor, etc",
                   contentPadding: EdgeInsets.symmetric(vertical: 15.v),
                 ),
@@ -83,10 +84,27 @@ class MyBookingsOneTabContainerPageState
         margin: EdgeInsets.only(left: 23.h),
       ),
       actions: [
-        AppbarTrailingImage(
-          imagePath: ImageConstant.imgUserGray10002,
-          margin: EdgeInsets.fromLTRB(13.h, 8.v, 13.h, 5.v),
+        CustomImageView(
+          //imgVector
+          imagePath: 'assets/images/calendar.png',
+          margin: EdgeInsets.fromLTRB(50.h, 0.v, 0.h, 0.v),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => CourseCalendarModelBottomsheet()),
+            );
+          },
         ),
+        CustomImageView(
+          //imgVector
+          imagePath: 'assets/images/list.png',
+          margin: EdgeInsets.fromLTRB(5.h, 0.v, 40.h, 0.v),
+        )
+        // AppbarTrailingImage(
+        //   imagePath: ImageConstant.imgUserGray10002,
+        //   margin: EdgeInsets.fromLTRB(13.h, 8.v, 13.h, 5.v),
+        // ),
       ],
     );
   }

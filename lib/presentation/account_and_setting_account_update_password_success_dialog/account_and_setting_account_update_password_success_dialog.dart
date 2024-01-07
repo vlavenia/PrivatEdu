@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:privatedu/core/app_export.dart';
+import 'package:privatedu/presentation/account_and_setting_account_screen/account_and_setting_account_screen.dart';
+import 'package:privatedu/presentation/account_and_setting_page/account_and_setting_page.dart';
+import 'package:privatedu/presentation/account_and_setting_page/container_screen/account_and_setting_page_container_screen.dart';
+import 'package:privatedu/presentation/homepage_one_container_screen/homepage_one_container_screen.dart';
 import 'package:privatedu/widgets/custom_outlined_button.dart';
 
 // ignore_for_file: must_be_immutable
@@ -56,6 +60,13 @@ class AccountAndSettingAccountUpdatePasswordSuccessDialog
           SizedBox(height: 17.v),
           CustomOutlinedButton(
             text: "Close",
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => HomepageOneContainerScreen()),
+              );
+            },
           ),
         ],
       ),

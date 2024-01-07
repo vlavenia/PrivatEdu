@@ -48,7 +48,7 @@ class CourseCalendarModelBottomsheet extends StatelessWidget {
                 ),
               );
             },
-            itemCount: 4,
+            itemCount: 1,
             itemBuilder: (context, index) {
               return ViewhierarchyItemWidget();
             },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:privatedu/core/app_export.dart';
+import 'package:privatedu/presentation/message_two_screen/message_two_screen.dart';
 import 'package:privatedu/widgets/custom_icon_button.dart';
 
 class MessageOnePage extends StatefulWidget {
@@ -38,23 +39,14 @@ class MessageOnePageState extends State<MessageOnePage>
               SizedBox(
                   height: 49.v,
                   width: 51.h,
-                  child: Stack(alignment: Alignment.center, children: [
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Container(
-                            height: 49.adaptSize,
-                            width: 49.adaptSize,
-                            decoration: BoxDecoration(
-                                color: appTheme.orange50,
-                                borderRadius: BorderRadius.circular(15.h)))),
-                    CustomIconButton(
-                        height: 49.adaptSize,
-                        width: 49.adaptSize,
-                        padding: EdgeInsets.all(7.h),
-                        alignment: Alignment.center,
-                        child:
-                            CustomImageView(imagePath: ImageConstant.imgPlay))
-                  ])),
+                  child: CustomIconButton(
+                    height: 49.adaptSize,
+                    width: 49.adaptSize,
+                    padding: EdgeInsets.all(7.h),
+                    alignment: Alignment.center,
+                    // child: CustomImageView(
+                    //     imagePath: 'assets/images/img_play.svg')
+                  )),
               Padding(
                   padding: EdgeInsets.only(left: 10.h, top: 6.v, bottom: 4.v),
                   child: Column(
@@ -87,16 +79,17 @@ class MessageOnePageState extends State<MessageOnePage>
 
   /// Navigates to the messageTwoScreen when the action is triggered.
   onTapTxtDeveshOjha(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.messageTwoScreen);
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => MessageTwoScreen()));
   }
 
   /// Navigates to the messageTwoScreen when the action is triggered.
   onTapTxtHello(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.messageTwoScreen);
+    MaterialPageRoute(builder: (context) => MessageTwoScreen());
   }
 
   /// Navigates to the messageTwoScreen when the action is triggered.
   onTapTxtTime(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.messageTwoScreen);
+    MaterialPageRoute(builder: (context) => MessageTwoScreen());
   }
 }

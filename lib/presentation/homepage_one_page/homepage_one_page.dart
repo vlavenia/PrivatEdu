@@ -33,7 +33,7 @@ class HomepageOnePage extends StatelessWidget {
                               padding: EdgeInsets.only(right: 9.h),
                               child: CustomSearchView(
                                   controller: searchController,
-                                  autofocus:false,
+                                  autofocus: false,
                                   hintText: "Search Course, Mentor, etc")),
                           SizedBox(height: 16.v),
                           _buildEducation(context),
@@ -50,7 +50,7 @@ class HomepageOnePage extends StatelessWidget {
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         title: Padding(
-            padding: EdgeInsets.only(left: 23.h,top: 15),
+            padding: EdgeInsets.only(left: 23.h, top: 15),
             child: Column(children: [
               AppbarTitle(
                   text: "Hi, Jenny Wilson",
@@ -59,15 +59,16 @@ class HomepageOnePage extends StatelessWidget {
               AppbarSubtitleFive(text: "Here is your Course today ")
             ])),
         actions: [
-          AppbarTrailingImage(//imgVector
+          CustomImageView(
+              //imgVector
               imagePath: ImageConstant.imgVector,
+              color: Color.fromARGB(255, 82, 183, 223),
               margin: EdgeInsets.fromLTRB(50.h, 2.v, 40.h, 0.v))
         ]);
   }
 
   /// Section Widget
   Widget _buildEducation(BuildContext context) {
-    
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Padding(
           padding: EdgeInsets.only(right: 22.h),
@@ -85,8 +86,9 @@ class HomepageOnePage extends StatelessWidget {
             GestureDetector(
                 onTap: () {
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomepageTwoScreen()),
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HomepageTwoScreen()),
                   );
                 },
                 child: Padding(
@@ -143,31 +145,26 @@ class HomepageOnePage extends StatelessWidget {
 
   /// Section Widget
   Widget _buildUserProfile(BuildContext context) {
-    
-          List images = [
-                      {
-                        'image': 'assets/onboarding/onboarding1.png',
-                        'title': 'Matematika',
-                        'background':
-                            appTheme.deepOrange400,
-                            'icon': 
-                              'assets/images/img_square_root_of_x_math_formula.svg'
-                      },
-                      {
-                        'image': 'assets/onboarding/onboarding3.png',
-                        'title': 'Geografi',
-                        'background':
-                            appTheme.blue,
-                        'icon':  'assets/images/img_earth_1.svg'
-                      },
-                      {
-                        'image': 'assets/onboarding/onboarding2.png',
-                        'title': 'Fisika',
-                        'background':
-                            appTheme.yellow,
-                            'icon':  'assets/images/img_square_root_of_x_math_formula.svg'
-                      },
-                    ];
+    List images = [
+      {
+        'image': 'assets/onboarding/onboarding1.png',
+        'title': 'Mathematics',
+        'background': appTheme.deepOrange400,
+        'icon': 'assets/images/img_square_root_of_x_math_formula.svg'
+      },
+      {
+        'image': 'assets/onboarding/onboarding3.png',
+        'title': 'Geography',
+        'background': appTheme.blue,
+        'icon': 'assets/images/img_earth_1.svg'
+      },
+      {
+        'image': 'assets/onboarding/onboarding2.png',
+        'title': 'Fisika',
+        'background': appTheme.yellow,
+        'icon': 'assets/images/img_square_root_of_x_math_formula.svg'
+      },
+    ];
 
     return SizedBox(
         height: 119.v,
@@ -178,9 +175,10 @@ class HomepageOnePage extends StatelessWidget {
             },
             itemCount: images.length,
             itemBuilder: (BuildContext context, int index) {
-              return UserprofileItemWidget(images[index]['title'], images[index]['background'], images[index]['icon']);
+              return UserprofileItemWidget(images[index]['title'],
+                  images[index]['background'], images[index]['icon']);
             }));
-            // images.map((imageUrl) {
+    // images.map((imageUrl) {
   }
 
   /// Section Widget
@@ -201,49 +199,49 @@ class HomepageOnePage extends StatelessWidget {
                   children: [
                     Padding(
                         padding: EdgeInsets.only(left: 20.h, top: 21.v),
-                        
                         child: Container(
                           width: 328,
                           child: Column(
-                            
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
-                                  
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text("Biology",
-                                        style: CustomTextStyles.titleMediumWhiteA700),
+                                        style: CustomTextStyles
+                                            .titleMediumWhiteA700),
                                     Padding(
                                       padding: const EdgeInsets.only(right: 17),
                                       child: CustomImageView(
-                                                                      imagePath:
-                                      'assets/icon/iconelipsis.png',
-                                                                      height: 24.adaptSize,
-                                                                      width: 24.adaptSize,
-                                                                      color: Colors.white
-                                                                    ),
+                                          imagePath:
+                                              'assets/icon/iconelipsis.png',
+                                          height: 24.adaptSize,
+                                          width: 24.adaptSize,
+                                          color: Colors.white),
                                     )
                                   ],
                                 ),
                                 SizedBox(height: 3.v),
                                 Text("Chapter 3: Animal Kingdom",
-                                    style: CustomTextStyles.labelLargeWhiteA700),
-                                SizedBox(height: 10.v),   
-                                  Row(
-                                    children: [
-                                      CustomImageView(
-                                    imagePath: 'assets/images/img_location_point_2.svg',
-                                    color: Colors.white70,
-                                    radius: BorderRadius.circular(2.h)),
+                                    style:
+                                        CustomTextStyles.labelLargeWhiteA700),
+                                SizedBox(height: 10.v),
+                                Row(
+                                  children: [
+                                    CustomImageView(
+                                        imagePath:
+                                            'assets/images/img_location_point_2.svg',
+                                        color: Colors.white70,
+                                        radius: BorderRadius.circular(2.h)),
                                     const SizedBox(
-                                  width: 8.0,
+                                      width: 8.0,
                                     ),
-                                      Text("Room 2-168",
-                                            style: CustomTextStyles
-                                                .bodySmallWhiteA700_1),
-                                    ],
-                                  ),
+                                    Text("Room 2-168",
+                                        style: CustomTextStyles
+                                            .bodySmallWhiteA700_1),
+                                  ],
+                                ),
                                 CustomImageView(
                                     imagePath: ImageConstant.imgLocationPoint2,
                                     height: 5.v,
@@ -251,7 +249,6 @@ class HomepageOnePage extends StatelessWidget {
                                     radius: BorderRadius.circular(2.h))
                               ]),
                         )),
-                   
                   ]))
         ]));
   }
@@ -285,5 +282,4 @@ class HomepageOnePage extends StatelessWidget {
   }
 
   /// Navigates to the homepageTwoScreen when the action is triggered.
-  
 }

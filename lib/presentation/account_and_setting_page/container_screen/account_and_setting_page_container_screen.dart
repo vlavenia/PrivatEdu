@@ -7,8 +7,8 @@ import 'package:privatedu/presentation/my_bookings_one_tab_container_page/my_boo
 import 'package:privatedu/widgets/custom_bottom_bar.dart';
 
 // ignore_for_file: must_be_immutable
-class HomepageOneContainerScreen extends StatelessWidget {
-  HomepageOneContainerScreen({Key? key}) : super(key: key);
+class accountAndSettingPageContainerScreen extends StatelessWidget {
+  accountAndSettingPageContainerScreen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -17,7 +17,7 @@ class HomepageOneContainerScreen extends StatelessWidget {
     return Scaffold(
         body: Navigator(
             key: navigatorKey,
-            initialRoute: AppRoutes.homepageOnePage,
+            initialRoute: AppRoutes.accountAndSettingPage,
             onGenerateRoute: (routeSetting) => PageRouteBuilder(
                 pageBuilder: (ctx, ani, ani1) =>
                     getCurrentPage(routeSetting.name!),

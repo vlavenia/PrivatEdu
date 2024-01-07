@@ -20,7 +20,7 @@ class SignUp1Screen extends StatelessWidget {
 
   TextEditingController phoneNumberController = TextEditingController();
 
-  bool checkBox = false;
+  bool checkBox = true;
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 

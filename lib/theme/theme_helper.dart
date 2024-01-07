@@ -238,9 +238,14 @@ class PrimaryColors {
   // DeepOrange
   Color get deepOrange400 => Color(0XFFFF7648);
   Color get deepOrange90067 => Color(0X67B45309);
-  //custom FFC278
+  //custom Color.fromARGB(255, 86, 103, 253)
   Color get blue => Color.fromARGB(255, 143, 152, 255);
   Color get yellow => Color.fromARGB(255, 255, 194, 120);
+  Color get colorbacgroundbrown => Color.fromARGB(255, 111, 68, 57);
+  Color get colorkhaki => Color.fromARGB(255, 213, 47, 47);
+  Color get lightblue => Color.fromARGB(255, 86, 103, 253);
+  
+
   // Gray
   Color get gray100 => Color(0XFFF2F7FA);
   Color get gray10001 => Color(0XFFF3F6F6);

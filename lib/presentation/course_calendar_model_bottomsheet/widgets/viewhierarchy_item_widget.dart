@@ -27,6 +27,7 @@ class ViewhierarchyItemWidget extends StatelessWidget {
             decoration: IconButtonStyleHelper.fillTealTL16,
             child: CustomImageView(
               imagePath: ImageConstant.imgBoldBook,
+              color: Colors.white,
             ),
           ),
         ),

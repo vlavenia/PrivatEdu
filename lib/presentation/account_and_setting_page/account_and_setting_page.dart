@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:privatedu/core/app_export.dart';
 import 'package:privatedu/module/login/view/login_view.dart';
+import 'package:privatedu/presentation/account_and_setting_account_screen/account_and_setting_account_screen.dart';
+import 'package:privatedu/presentation/account_and_setting_profil_screen/account_and_setting_profil_screen.dart';
+import 'package:privatedu/presentation/account_and_setting_setting_screen/account_and_setting_setting_screen.dart';
 import 'package:privatedu/widgets/app_bar/appbar_subtitle_three.dart';
 import 'package:privatedu/widgets/app_bar/appbar_title_image.dart';
 import 'package:privatedu/widgets/app_bar/custom_app_bar.dart';
@@ -40,7 +43,13 @@ class AccountAndSettingPage extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 1.h),
                       child: _buildAccount(context, dynamicProperty2: "About",
                           onTapAccount: () {
-                        onTapAbout(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  AccountAndSettingSettingScreen()),
+                        );
+                        ;
                       })),
                   SizedBox(height: 5.v)
                 ]))));
@@ -95,8 +104,8 @@ class AccountAndSettingPage extends StatelessWidget {
                   decoration: IconButtonStyleHelper.fillGray,
                   onTap: () {
                     Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginView()),
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginView()),
                     );
                   },
                   child:
@@ -143,12 +152,18 @@ class AccountAndSettingPage extends StatelessWidget {
 
   /// Navigates to the accountAndSettingProfilScreen when the action is triggered.
   onTapProfil(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.accountAndSettingProfilScreen);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AccountAndSettingProfilScreen()),
+    );
   }
 
   /// Navigates to the accountAndSettingAccountScreen when the action is triggered.
   onTapAccount(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.accountAndSettingAccountScreen);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AccountAndSettingAccountScreen()),
+    );
   }
 
   /// Navigates to the accountAndSettingSettingScreen when the action is triggered.

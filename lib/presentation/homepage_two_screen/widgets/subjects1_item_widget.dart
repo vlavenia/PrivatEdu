@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:privatedu/core.dart';
 import 'package:privatedu/core/app_export.dart';
 import 'package:privatedu/widgets/custom_icon_button.dart';
 
 // ignore: must_be_immutable
 class Subjects1ItemWidget extends StatelessWidget {
-  Subjects1ItemWidget({
+  String title;
+  Color coloricon;
+  String image;
+  BoxDecoration colorbackground;
+
+
+  Subjects1ItemWidget(this.title, this.coloricon, this.image, this.colorbackground, {
     Key? key,
     this.onTapSubjects,
   }) : super(
@@ -15,30 +22,43 @@ class Subjects1ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: GestureDetector(
-        onTap: () {
-          onTapSubjects!.call();
-        },
-        child: Column(
-          children: [
-            CustomIconButton(
-              height: 68.adaptSize,
-              width: 68.adaptSize,
-              padding: EdgeInsets.all(16.h),
-              decoration: IconButtonStyleHelper.fillPink,
-              child: CustomImageView(
-                imagePath: ImageConstant.imgSearch,
+    return Container(
+      height: 2050,
+      child: Wrap(
+        
+              direction: Axis.vertical,
+      children: [
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+                children: [
+                  GestureDetector(
+                    onTap: (){
+                      HomepageOnePage();
+                    },
+                    child: Container(
+                    height: 68.adaptSize,
+                    width: 68.adaptSize,
+                    padding: EdgeInsets.all(16.h),
+                    decoration: colorbackground,
+                    child: CustomImageView(
+                      imagePath: image,
+                      color: coloricon,
+                    ),
+                                  ),
+                  ),
+                SizedBox(height: 13.v),
+                Text(
+                  title,
+                   maxLines: 1,
+                   textAlign: TextAlign.center,
+                  style: theme.textTheme.labelLarge,
+                ),
+                ],
               ),
-            ),
-            SizedBox(height: 13.v),
-            Text(
-              "TK",
-              style: theme.textTheme.labelLarge,
-            ),
-          ],
-        ),
+          ),
+              
+            ],
       ),
     );
   }
